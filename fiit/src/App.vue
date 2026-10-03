@@ -12,9 +12,9 @@
 <script setup lang="ts">
 
 import CheckboxComp from "@/components/Checkbox.vue";
-import {ref, onBeforeMount, onMounted, onBeforeUnmount} from "vue";
+import {ref, onBeforeMount, onMounted, onBeforeUnmount, provide} from "vue";
 
-const value = ref(0)
+const value = ref(10)
 
 const addValue = (v: number) => {
   value.value += v
@@ -23,6 +23,8 @@ const addValue = (v: number) => {
 onBeforeMount(() => {
   console.log('onBeforeMount')
 })
+
+provide('v', value)
 
 onMounted(() => {
   console.log('App')
