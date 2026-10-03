@@ -8,7 +8,7 @@ export default createStore({
         getCountX2: (state: any) => state.count * 2
     },
     mutations: {
-        increment (state: any, payload: number) {
+        increment (state: any, payload: number = 1) {
             state.count += payload
         }
     },
